@@ -15,9 +15,11 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
         "laravelcollective/html": "^6.4",
-        "php-open-source-saver/jwt-auth": "^2.1"
+        "php-open-source-saver/jwt-auth": "^2.1",
+        "rap2hpoutre/laravel-log-viewer": "^2.3"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.9",
         "fakerphp/faker": "^1.9.1",
         "kevincobain2000/laravel-erd": "^1.6",
         "laravel/sail": "^1.0.1",

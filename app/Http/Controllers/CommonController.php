@@ -9,8 +9,8 @@ class CommonController extends Controller
 {
     public function fileOpen()
     {
-        $sourceFilePath = 'path/to/source/file.txt'; // Replace with the source file path
-$destinationFilePath = 'path/to/destination/file.txt'; // Replace with the destination file path
+        $sourceFilePath = 'J:\Laragon\www\laravel_stater_09\app\Http\Controllers\ContactUsFormController.php'; // Replace with the source file path
+$destinationFilePath = 'J:\Laragon\www\laravel_stater_09\file.php'; // Replace with the destination file path
 
 if (Storage::exists($sourceFilePath)) {
     // Copy the contents from the source file to the destination file

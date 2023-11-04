@@ -35,6 +35,7 @@ Route::get('/', function () {
 
 Auth::routes();
 // Artisan::routes();
+Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
