@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CommonController;
 use App\Http\Controllers\PmhnpsController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ContactController;
@@ -27,6 +28,7 @@ use App\Http\Controllers\User\UserDashboardController;
 
 
 Route::get('/', function () {
+    return "test";
 
     return view('welcome');
 })->name('welcome');
@@ -144,7 +146,13 @@ Route::resource('ajaxposts','PostAjaxController');
 Route::get('/fetch-index', [DataController::class,'index'])->name('index');
 Route::get('/fetch-data', [DataController::class,'fetchData'])->name('fetch.data');
 
-Route::get('test',);
+// Common controller method
+Route::get('/file-open', [CommonController::class,'fileOpen'])->name('file.open');
+
+
+
+
+
 
 
 
