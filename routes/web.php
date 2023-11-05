@@ -149,9 +149,19 @@ Route::get('/fetch-data', [DataController::class,'fetchData'])->name('fetch.data
 
 // Common controller method
 Route::get('/file-open', [CommonController::class,'fileOpen'])->name('file.open');
+Route::get('/add', [CommonController::class,'add'])->name('add');
 
 
 
+
+Route::get('send/email', function(){
+
+	$send_mail = 'test@gmail.com';
+
+    dispatch(new App\Jobs\SendEmailQueueJob($send_mail));
+
+    dd('send mail successfully !!');
+});
 
 
 
