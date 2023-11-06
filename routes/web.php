@@ -7,7 +7,7 @@ use App\Http\Controllers\{
     PostAjaxController, FindPmhnpsController, ReviewRatingController,
     SubscriptionController, TempRegisterController, ContactUsFormController,
     ListingPmhnpsController, CaptchaServiceController, RemainingDetailsController,
-    User\UserDashboardController
+    User\UserDashboardController, RazorpayPaymentController
 };
 
 
@@ -154,4 +154,7 @@ Route::get('send/email', function(){
 Route::get('server-details', [ServerController::class, 'index'])->name('index');
 
 
+// Razorpay Paymentgateway
 
+Route::get('razorpay-payment', [RazorpayPaymentController::class, 'index']);
+Route::post('razorpay-payment', [RazorpayPaymentController::class, 'store'])->name('razorpay.payment.store');
