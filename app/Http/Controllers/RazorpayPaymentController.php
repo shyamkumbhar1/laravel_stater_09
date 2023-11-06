@@ -9,21 +9,13 @@ use Exception;
 
 class RazorpayPaymentController extends Controller
 {
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
+
     public function index()
     {
         return view('razorpayView');
     }
 
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
+ 
     public function store(Request $request)
     {
         $input = $request->all();
