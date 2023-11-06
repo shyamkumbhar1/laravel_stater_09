@@ -7,7 +7,7 @@ use App\Http\Controllers\{
     PostAjaxController, FindPmhnpsController, ReviewRatingController,
     SubscriptionController, TempRegisterController, ContactUsFormController,
     ListingPmhnpsController, CaptchaServiceController, RemainingDetailsController,
-    User\UserDashboardController, RazorpayPaymentController
+    User\UserDashboardController, RazorpayPaymentController ,PostController
 };
 
 
@@ -158,3 +158,10 @@ Route::get('server-details', [ServerController::class, 'index'])->name('index');
 
 Route::get('razorpay-payment', [RazorpayPaymentController::class, 'index']);
 Route::post('razorpay-payment', [RazorpayPaymentController::class, 'store'])->name('razorpay.payment.store');
+
+
+// Ajax Crud | How to call ajax in laravel 
+Route::controller(PostController::class)->group(function(){
+    Route::get('posts', 'index');
+    Route::post('posts', 'store')->name('posts.store');
+});
