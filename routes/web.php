@@ -1,27 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
-use App\Http\Controllers\DataController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CommonController;
-use App\Http\Controllers\PmhnpsController;
-use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\DropdownController;
-use App\Http\Controllers\PostAjaxController;
-use App\Http\Controllers\FindPmhnpsController;
-use App\Http\Controllers\ReviewRatingController;
-use App\Http\Controllers\SubscriptionController;
-use App\Http\Controllers\TempRegisterController;
-use App\Http\Controllers\ContactUsFormController;
-use App\Http\Controllers\ListingPmhnpsController;
-use App\Http\Controllers\CaptchaServiceController;
-use App\Http\Controllers\RemainingDetailsController;
-use App\Http\Controllers\User\UserDashboardController;
-
-
+use Illuminate\Support\Facades\{Auth, Route, Artisan};
+use App\Http\Controllers\{
+    DataController, HomeController, CommonController, PmhnpsController,
+    ReviewController, ServerController, ContactController, DropdownController,
+    PostAjaxController, FindPmhnpsController, ReviewRatingController,
+    SubscriptionController, TempRegisterController, ContactUsFormController,
+    ListingPmhnpsController, CaptchaServiceController, RemainingDetailsController,
+    User\UserDashboardController
+};
 
 
 
@@ -163,7 +150,8 @@ Route::get('send/email', function(){
     dd('send mail successfully !!');
 });
 
-
+// Custom Service provider
+Route::get('server-details', [ServerController::class, 'index'])->name('index');
 
 
 
