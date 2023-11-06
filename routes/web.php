@@ -4,12 +4,13 @@ use Illuminate\Support\Facades\{Auth, Route, Artisan};
 use App\Http\Controllers\{
     DataController, HomeController, CommonController, PmhnpsController,
     ReviewController, ServerController, ContactController, DropdownController,
-    PostAjaxController, FindPmhnpsController, ReviewRatingController,
+     FindPmhnpsController, ReviewRatingController,
     SubscriptionController, TempRegisterController, ContactUsFormController,
     ListingPmhnpsController, CaptchaServiceController, RemainingDetailsController,
     User\UserDashboardController, RazorpayPaymentController ,PostController
 };
 
+use App\http\Controllers\PostAjaxController;
 
 
 
