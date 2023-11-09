@@ -138,6 +138,7 @@ Route::get('/fetch-data', [DataController::class,'fetchData'])->name('fetch.data
 // Common controller method
 Route::get('/file-open', [CommonController::class,'fileOpen'])->name('file.open');
 Route::get('/add', [CommonController::class,'add'])->name('add');
+Route::get('/date', [CommonController::class,'date'])->name('date');
 
 
 

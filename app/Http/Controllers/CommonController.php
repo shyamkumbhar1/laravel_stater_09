@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -33,6 +34,12 @@ class CommonController extends Controller
     $controller = new CommonController();
     $result = $controller->add(5, 3);
     // $result will be 8
+    }
+  public   function date() {
+    $date= now();
+    $now = Carbon::now();
+
+    dd($date ,$date->format('d-m-y h:i:s',$date->format('l')));
     }
 
 
