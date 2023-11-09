@@ -7,7 +7,7 @@ use App\Http\Controllers\{
      FindPmhnpsController, ReviewRatingController,
     SubscriptionController, TempRegisterController, ContactUsFormController,
     ListingPmhnpsController, CaptchaServiceController, RemainingDetailsController,
-    User\UserDashboardController, RazorpayPaymentController ,PostController
+    User\UserDashboardController, RazorpayPaymentController ,PostController , CrudController
 };
 
 use App\http\Controllers\PostAjaxController;
@@ -166,3 +166,8 @@ Route::controller(PostController::class)->group(function(){
     Route::get('posts', 'index');
     Route::post('posts', 'store')->name('posts.store');
 });
+
+// Ajax Crud
+
+Route::get('/todo', [CrudController::class, 'index']);
+Route::resource('todo', CrudController::class);
