@@ -128,7 +128,7 @@ route::view('home/privacy','home/privacy')->name('home.privacy');
 Route::view('test','test');
 
 // Ajax Crud
-Route::resource('ajaxposts','PostAjaxController');
+Route::resource('ajaxposts',PostAjaxController::class);
 
 // Ajax Call
 

@@ -15,10 +15,12 @@ class PostAjaxController extends Controller
      */
     public function index(Request $request)
     {
+        dd('test');
 
         if ($request->ajax()) {
+            // $post = Post::latest()->get();
             $post = Post::latest()->get();
-            return Datatables::of($data)
+            return Datatables::of($post)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
 
