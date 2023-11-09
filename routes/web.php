@@ -169,5 +169,5 @@ Route::controller(PostController::class)->group(function(){
 
 // Ajax Crud
 
-Route::get('/todo', [CrudController::class, 'index']);
+Route::get('/ajax-crud', [CrudController::class, 'index']);
 Route::resource('todo', CrudController::class);
