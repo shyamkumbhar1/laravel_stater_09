@@ -172,3 +172,11 @@ Route::controller(PostController::class)->group(function(){
 
 Route::get('/ajax-crud', [CrudController::class, 'index']);
 Route::resource('todo', CrudController::class);
+
+// Paytm integration
+// https://blog.developersuraj.site/Paytm-payment-gateway-integration-in-Laravel-8
+
+Route::get('/initiate','App\Http\Controllers\PaytmController@initiate')->name('initiate.payment');
+Route::post('/payment','App\Http\Controllers\PaytmController@pay')->name('make.payment');
+Route::post('/payment/status', 'App\Http\Controllers\PaytmController@paymentCallback')->name('status');
+

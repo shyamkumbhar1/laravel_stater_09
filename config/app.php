@@ -196,6 +196,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\SiteServiceProvider::class,
+        Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
+
+
 
 
 
@@ -214,6 +217,9 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'PaytmWallet' => Anand\LaravelPaytmWallet\Facades\PaytmWallet::class,
+
+
 
     ])->toArray(),
 
