@@ -16,7 +16,7 @@ use App\http\Controllers\PostAjaxController;
 
 
 Route::get('/', function () {
-    return "test";
+    // return "test";
 
     return view('welcome');
 })->name('welcome');

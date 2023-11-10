@@ -118,7 +118,7 @@ class SubscriptionController extends Controller
     {
         $user_id = $request->session()->get('user_id');
         $temp_user = TempRegister::where('id',$user_id)->first();
-
+        // dd($user_id,$temp_user,$temp_user->name);
 
         $user = new User();
         $user->createOrGetStripeCustomer([
