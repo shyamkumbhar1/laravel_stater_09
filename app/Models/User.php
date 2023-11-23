@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Role;
 use App\Models\Country;
 use Laravel\Cashier\Billable;
 use Laravel\Sanctum\HasApiTokens;
@@ -24,10 +25,6 @@ class User extends Authenticatable  implements JWTSubject
         'password',
         'status'
     ];
-    public function country()
-    {
-        return $this->belongsTo(Country::class);
-    }
 
 
     protected $hidden = [
@@ -45,13 +42,19 @@ class User extends Authenticatable  implements JWTSubject
         return $this->getKey();
     }
 
-    /**
-     * Return a key value array, containing any custom claims to be added to the JWT.
-     *
-     * @return array
-     */
+
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_user');
     }
 }

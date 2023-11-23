@@ -11,6 +11,8 @@ use App\Http\Controllers\{
 };
 
 use App\http\Controllers\PostAjaxController;
+use App\models\User;
+use App\models\Role;
 
 
 
@@ -180,3 +182,9 @@ Route::get('/initiate','App\Http\Controllers\PaytmController@initiate')->name('i
 Route::post('/payment','App\Http\Controllers\PaytmController@pay')->name('make.payment');
 Route::post('/payment/status', 'App\Http\Controllers\PaytmController@paymentCallback')->name('status');
 
+Route::get('/many-to-many', function(){
+    $user = User::find(1);
+    $role = Role::find(1);
+    echo "<pre>";
+    dd($user->roles,$role->users );
+})->name('status');
