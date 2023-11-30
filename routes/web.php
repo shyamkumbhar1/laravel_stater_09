@@ -7,7 +7,7 @@ use App\Http\Controllers\{
      FindPmhnpsController, ReviewRatingController,
     SubscriptionController, TempRegisterController, ContactUsFormController,
     ListingPmhnpsController, CaptchaServiceController, RemainingDetailsController,
-    User\UserDashboardController, RazorpayPaymentController ,PostController , CrudController
+    User\UserDashboardController, RazorpayPaymentController ,PostController , CrudController ,ProductAjaxController
 };
 
 use App\http\Controllers\PostAjaxController;
@@ -188,3 +188,7 @@ Route::get('/many-to-many', function(){
     echo "<pre>";
     dd($user->roles,$role->users );
 })->name('status');
+
+
+// Datatable |ajax Crud
+Route::resource('products-ajax-crud', ProductAjaxController::class);
