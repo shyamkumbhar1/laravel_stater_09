@@ -183,6 +183,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        App\Providers\CustomServiceProvider::class,
+
         /*
          * Package Service Providers...
          */

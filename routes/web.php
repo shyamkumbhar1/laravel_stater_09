@@ -13,6 +13,8 @@ use App\Http\Controllers\{
 use App\http\Controllers\PostAjaxController;
 use App\models\User;
 use App\models\Role;
+use App\Services\CustomService;
+
 
 
 
@@ -192,3 +194,10 @@ Route::get('/many-to-many', function(){
 
 // Datatable |ajax Crud
 Route::resource('products-ajax-crud', ProductAjaxController::class);
+
+
+Route::get('service-provider',function (CustomService $customService){
+
+    $result = $customService->doSomething();
+    return response()->json(['result' => $result]);
+});
