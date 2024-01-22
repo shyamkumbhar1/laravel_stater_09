@@ -25,6 +25,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/clear', function () {
+    Artisan::call('optimize:clear');
+
+    return response()->json(['message' => 'Optimization cache cleared']);
+});
+
 Auth::routes();
 // Artisan::routes();
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
@@ -201,3 +207,9 @@ Route::get('service-provider',function (CustomService $customService){
     $result = $customService->doSomething();
     return response()->json(['result' => $result]);
 });
+
+Route::get('api-throttling',function (CustomService $customService){
+return "test";
+})->middleware('throttle:custom_rate_limit');
+
+
